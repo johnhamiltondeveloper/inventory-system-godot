@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Inventory/inventory.gd" type="Script" id=1]
+[ext_resource path="res://Inventory/script/hand.gd" type="Script" id=3]
+
+[node name="inventory" type="Control"]
+margin_right = 1024.0
+margin_bottom = 600.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sort" type="YSort" parent="."]
+position = Vector2( -32.0055, -34.5724 )
+z_index = 30
+sort_enabled = false
+
+[node name="hand" type="Control" parent="sort"]
+margin_left = 32.0055
+margin_top = 34.5724
+margin_right = 96.0055
+margin_bottom = 99.5724
+mouse_filter = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="item" type="TextureRect" parent="sort/hand"]
+margin_left = -32.0055
+margin_top = -34.5724
+margin_right = 31.9945
+margin_bottom = 29.4276
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="sort/hand"]
+margin_left = -29.643
+margin_top = -48.9051
+margin_right = 10.357
+margin_bottom = -34.9051
+
+[node name="Last_hover" type="Timer" parent="."]
+[connection signal="timeout" from="Last_hover" to="." method="_on_Last_hover_timeout"]

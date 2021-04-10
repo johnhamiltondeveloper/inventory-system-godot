@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Items/Scripts/Item.gd" type="Script" id=1]
+[ext_resource path="res://Items/Images/Ring.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+name = "Ring"
+texture = ExtResource( 2 )
+id = 1
+stack_size = 2
